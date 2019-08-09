@@ -2,7 +2,7 @@
 Simple Python program that uses PyGame to create Circle Packing Art, as shown below
 
 
-![CirclePacking]()
+![CirclePacking](https://imgur.com/Ytmiau5)
 
 # Motivation
 I saw a YouTube video by [The Coding Train](https://youtu.be/QHEQuoIKgNE) where he does the same thing, but in Processing. I only saw the first couple minutes and thought it looked interesting so I attempted to make my own. 
@@ -49,4 +49,7 @@ or
 4. `C` to continue the animation
 5. `R` to restart the animation *(only when not paused)*
 
+# Contributing
+If you stumble upon this project and you find any bugs or just want something added to it feel free!
+ 
 *Project by Harjot Singh*
