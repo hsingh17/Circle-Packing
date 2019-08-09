@@ -1,7 +1,7 @@
 # Circle Packing Art
 Simple Python program that uses PyGame to create Circle Packing Art, as shown below
 
-![CirclePacking](https://i.imgur.com/Ytmiau5.gifv)
+![CirclePacking](https://i.imgur.com/Ytmiau5.gif)
 
 # Motivation
 I saw a YouTube video by [The Coding Train](https://youtu.be/QHEQuoIKgNE) where he does the same thing, but in Processing. I only saw the first couple minutes and thought it looked interesting so I attempted to make my own. 
