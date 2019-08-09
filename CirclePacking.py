@@ -1,9 +1,10 @@
+#!/usr/bin/env python3
 import pygame 
 import random
 import math
+import uuid
 
 class Circle:
-    centers_in_use = []
     circles = []
     MIN_RADIUS = 2
     MAX_RADIUS = 100
@@ -50,17 +51,41 @@ class Circle:
         else:
             return False
 
+    @classmethod
+    def clear(cls):
+       cls.circles.clear() 
 
 def color():
     return (random.randrange(0,255), random.randrange(0,255), random.randrange(0,255))
 
+def paused():
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT: 
+                return False
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_c:
+                    return True
+                elif event.key == pygame.K_s:
+                    pygame.image.save(window, str(uuid.uuid4()) + ".jpeg")
+                elif event.key == pygame.K_q:
+                    return False
+
 def draw():
-    run = True
-    while run:
+    Circle.clear()
+    window.fill((0,0,0)) 
+    while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                run = False
-
+                return False
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_q:
+                    return False
+                elif event.key == pygame.K_p:
+                    run = paused()
+                elif event.key == pygame.K_r:
+                    return True        
+        
         circle = Circle()
         circle.grow()
         x,y = circle.center
@@ -69,10 +94,13 @@ def draw():
         pygame.display.update()
 
 
-WIDTH =  1080
-HEIGHT = 720
+WIDTH =  1920
+HEIGHT = 1080
 FPS = 60
 pygame.init()
-window = pygame.display.set_mode((WIDTH,HEIGHT))
+window = pygame.display.set_mode((WIDTH,HEIGHT), pygame.FULLSCREEN)
 pygame.display.set_caption("Circle Packing")
-draw()
+run = draw()
+while run:
+    run = draw()
+pygame.display.quit()
