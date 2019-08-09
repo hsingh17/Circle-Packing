@@ -37,6 +37,7 @@ To use the program, either run
 or
 
 `$ chmod +x CirclePacking.py`
+
 `$ ./CirclePacking.py`
 
 **Note: The animation opens in fullscreen do not be alarmed**
